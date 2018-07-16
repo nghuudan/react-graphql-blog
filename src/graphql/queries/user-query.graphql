@@ -1,0 +1,10 @@
+query UserQuery {
+  user {
+    id
+    userName
+    firstName
+    lastName
+    joinDate
+    role
+  }
+}
