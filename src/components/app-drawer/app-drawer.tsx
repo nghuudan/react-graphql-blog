@@ -14,9 +14,8 @@ export interface AppDrawerProps {
   toggleOpen?(): void;
 }
 
-const AppDrawer: StatelessComponent<AppDrawerProps> = ({ isOpen }) => (
-  <Drawer persistent
-    open={isOpen}>
+const AppDrawer: StatelessComponent<AppDrawerProps> = ({ isOpen, toggleOpen }) => (
+  <Drawer temporary open={isOpen} onClose={toggleOpen}>
     <DrawerHeader>
       DrawerHeader
     </DrawerHeader>

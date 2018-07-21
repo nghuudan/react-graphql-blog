@@ -9,16 +9,17 @@ import {
 } from 'rmwc/TopAppBar';
 
 export interface AppHeaderProps {
+  toggleDrawer?(): void;
   user?: {
     firstName: string;
   };
 }
 
-const AppHeader: StatelessComponent<AppHeaderProps> = ({ user }) => (
+const AppHeader: StatelessComponent<AppHeaderProps> = ({ toggleDrawer, user }) => (
   <TopAppBar className="app-header">
     <TopAppBarRow>
       <TopAppBarSection alignStart>
-        <IconButton use="menu" />
+        <IconButton use="menu" onClick={toggleDrawer} />
         <TopAppBarTitle>TinyBlog</TopAppBarTitle>
       </TopAppBarSection>
       <TopAppBarSection alignEnd>

@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { StatelessComponent } from 'react';
 import { Query } from 'react-apollo';
 import AppHeader from './app-header';
 import UserQuery from '../../graphql/queries/user-query.graphql';
 
-const AppHeaderContainer = () => (
+export interface AppHeaderContainerProps {
+  toggleDrawer?(): void;
+}
+
+const AppHeaderContainer: StatelessComponent<AppHeaderContainerProps> = ({
+  toggleDrawer,
+}) => (
   <Query query={UserQuery}>
     {
-      ({ data }) => <AppHeader user={data && data.user} />
+      ({ data }) => <AppHeader toggleDrawer={toggleDrawer} user={data && data.user} />
     }
   </Query>
 );

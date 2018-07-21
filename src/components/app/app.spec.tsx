@@ -5,7 +5,7 @@ import AppHeader from '../app-header/app-header-container';
 import AppBody from '../app-body/app-body';
 
 describe('App', () => {
-  const wrapper = shallow(<App />);
+  const wrapper = shallow(<App isDrawerOpen={false} toggleDrawer={jest.fn()} />);
 
   it('should render AppHeader', () => {
     expect(wrapper.find(AppHeader)).toHaveLength(1);
