@@ -11,7 +11,7 @@ describe('AppContainer', () => {
   });
 
   it('should toggle isDrawerOpen in state', () => {
-    const instance: AppContainer = wrapper.instance() as AppContainer;
+    const instance = wrapper.instance() as AppContainer;
     const state = wrapper.state() as AppContainerState;
     wrapper.setState({ isDrawerOpen: true });
     instance.toggleDrawer();

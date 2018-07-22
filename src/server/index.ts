@@ -1,15 +1,22 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import schema from '../graphql/schema';
 import logger from './logger';
 
-const PORT = 3141;
+const PORT = process.env.PORT || 3141;
 const app = express();
 
-app.use(bodyParser.json());
-app.get('/graphql', graphiqlExpress({ endpointURL: '/graphql' }));
-app.post('/graphql', graphqlExpress({ schema }));
+const apolloServer = new ApolloServer(<any>{
+  schema,
+  playground: {
+    settings: {
+      'editor.cursorShape': 'block',
+    },
+  },
+});
+
+apolloServer.applyMiddleware({ app });
+
 app.listen(PORT, () => logger.info(`Server on port ${PORT}`));
 
 export default app;

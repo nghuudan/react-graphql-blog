@@ -20,7 +20,7 @@ const AppDrawer: StatelessComponent<AppDrawerProps> = ({ isOpen, toggleOpen }) =
       DrawerHeader
     </DrawerHeader>
     <DrawerContent>
-     <ListItem>
+      <ListItem>
         <ListItemText>Cookies</ListItemText>
       </ListItem>
       <ListItem>
