@@ -26,8 +26,14 @@ module.exports = {
           { loader: 'sass-loader' },
         ],
       },
-      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
-      { test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader',
+      },
+      {
+        test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader',
+      },
     ],
   },
   output: {
@@ -40,5 +46,7 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
     }),
   ],
-  resolve: { extensions: ['.js', '.ts', '.tsx'] },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
+  },
 };

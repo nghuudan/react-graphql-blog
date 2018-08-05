@@ -10,6 +10,7 @@ module.exports = {
   ],
   setupFiles: ['./jest.setup'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  testURL: 'http://localhost',
   transform: {
     '\\.(gql|graphql)$': 'jest-transform-graphql',
     '^.+\\.tsx?$': 'ts-jest',
